@@ -1,0 +1,69 @@
+.container {
+  max-width: 1200px;
+  position: relative;
+  margin: 0 auto;
+}
+.row {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  & > .col {
+    float: left;
+    &:first-child {
+      padding-right: 40px;
+    }
+    &:last-child {
+      padding-left: 40px;
+    }
+  }
+  &--reversed {
+    & > .col {
+      float: right;
+      &:first-child {
+        padding-right: 0;
+        padding-left: 40px;
+      }
+      &:last-child {
+        padding-left: 0;
+        padding-right: 40px;
+      }
+    }
+  }
+  &--no-padding {
+    & > .col {
+      padding: 0 !important;
+    }
+  }
+  &.equal-height {
+    display: flex;
+    &::before, &::after {
+      content: none;
+    }
+  }
+  &.vertically-center {
+    align-items: center;
+  }
+  &--2 {
+    & > .col {
+      width: 50%;
+    }
+  }
+  &--3 {
+    & > .col {
+      width: 33%;
+    }
+  }
+  &--4 {
+    & > .col {
+      width: 25%;
+    }
+  }
+  &--5 {
+    & > .col {
+      width: 20%;
+    }
+  }
+}
